@@ -1,0 +1,53 @@
+// Exercise 2
+
+// Insert one row into decodemtl_addressbook.Account:
+
+    INSERT INTO Account (email, password, createdOn, modifiedOn) VALUES 
+    ("klingt@me.com", "123456", "2016-06-10", "2016-06-18");
+    
+    
+    // RESULT:
+    
+    mysql> select * from Account;
+    +----+---------------+----------+---------------------+---------------------+
+    | id | email         | password | createdOn           | modifiedOn          |
+    +----+---------------+----------+---------------------+---------------------+
+    |  1 | klingt@me.com | 123456   | 2016-06-10 00:00:00 | 2016-06-18 00:00:00 |
+    +----+---------------+----------+---------------------+---------------------+
+    1 row in set (0.00 sec)
+    
+
+// Insert one row into decodemtl_addressbook.AddressBook:
+
+    INSERT INTO AddressBook (name, createdOn, modifiedOn) VALUES 
+    ("Kasia", "2016-06-10", "2016-06-18");
+    
+    // RESULT:
+    
+    mysql> select * from AddressBook;
+    +----+-----------+-------+---------------------+---------------------+
+    | id | accountId | name  | createdOn           | modifiedOn          |
+    +----+-----------+-------+---------------------+---------------------+
+    |  1 |         0 | Kasia | 2016-06-10 00:00:00 | 2016-06-18 00:00:00 |
+    +----+-----------+-------+---------------------+---------------------+
+    1 row in set (0.00 sec)
+    
+
+// Insert three rows into decodemtl_addressbook.Entry
+
+    INSERT INTO Entry (firstName, lastName, birthday, type, subtype, contentLineOne, contentLineTwo, contentLineThree, contentLineFour, contentLineFive) VALUES 
+    ("Katarina", "Lingat", "1994-03-26", "home", "phone", "hello", "how", "are", "you", "?"),
+    ("Claudia", "Lingat", "1990-11-16", "work", "email", "dog", "cat", "mouse", "fish", "N/A"),
+    ("Manfred", "Lingat", "1955-03-05", "other", "address", "i", "see", "you", "N/A", "N/A");
+    
+    
+    // RESULT: 
+    
+    mysql> select * from Entry;
+    +----+---------------+-----------+----------+---------------------+-------+---------+----------------+----------------+------------------+-----------------+-----------------+
+    | id | addressBookId | firstName | lastName | birthday            | type  | subtype | contentLineOne | contentLineTwo | contentLineThree | contentLineFour | contentLineFive |
+    +----+---------------+-----------+----------+---------------------+-------+---------+----------------+----------------+------------------+-----------------+-----------------+
+    |  1 |             0 | Katarina  | Lingat   | 1994-03-26 00:00:00 | home  | phone   | hello          | how            | are              | you             | ?               |
+    |  2 |             0 | Claudia   | Lingat   | 1990-11-16 00:00:00 | work  | email   | dog            | cat            | mouse            | fish            | N/A             |
+    |  3 |             0 | Manfred   | Lingat   | 1955-03-05 00:00:00 | other | address | i              | see            | you              | N/A             | N/A             |
+    +----+---------------+-----------+----------+---------------------+-------+---------+----------------+----------------+------------------+-----------------+-----------------+
