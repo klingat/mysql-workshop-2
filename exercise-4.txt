@@ -1,0 +1,30 @@
+// Exercise 4
+
+// Modify the decodemtl_addressbook.Account row
+
+    update Account set password="56789" where id=1;
+
+// Modify the decodemtl_addressbook.AddressBook row
+
+    update AddressBook set name="Kashmoney" where id=1;
+
+// Modify the three decodemtl_addressbook.Entry rows using one query only
+
+    update Entry
+    set contentLineThree="I am modified",
+    contentLineFour="I am modified too", 
+    contentLineFive="I am modified also!!!" 
+    where 
+    id=1 OR
+    id=2 OR
+    id=3;
+    
+    // OUTPUT:
+    
++----+---------------+-----------+----------+---------------------+-------+---------+----------------+----------------+------------------+-------------------+-----------------------+
+| id | addressBookId | firstName | lastName | birthday            | type  | subtype | contentLineOne | contentLineTwo | contentLineThree | contentLineFour   | contentLineFive       |
++----+---------------+-----------+----------+---------------------+-------+---------+----------------+----------------+------------------+-------------------+-----------------------+
+|  1 |             0 | Katarina  | Lingat   | 1994-03-26 00:00:00 | home  | phone   | hello          | how            | I am modified    | I am modified too | I am modified also!!! |
+|  2 |             0 | Claudia   | Lingat   | 1990-11-16 00:00:00 | work  | email   | dog            | cat            | I am modified    | I am modified too | I am modified also!!! |
+|  3 |             0 | Manfred   | Lingat   | 1955-03-05 00:00:00 | other | address | i              | see            | I am modified    | I am modified too | I am modified also!!! |
++----+---------------+-----------+----------+---------------------+-------+---------+----------------+----------------+------------------+-------------------+-----------------------+
