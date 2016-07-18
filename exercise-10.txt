@@ -1,0 +1,38 @@
+// Exercise 10
+
+// How many Address Book Entries are listed as born before February 12th of 1982?
+
+    select count(addressBookId) from Entry where birthday < "1982-02-12";
+    
+    // OUTPUT:
+    +----------------------+
+    | count(addressBookId) |
+    +----------------------+
+    |                 2687 |
+    +----------------------+
+
+// How many Address Book Entries are listed as born on or after January 1st of 1965?
+
+    select count(addressBookId) from Entry where birthday > "1965-01-01";
+    
+    // OUTPUT:
+    +----------------------+
+    | count(addressBookId) |
+    +----------------------+
+    |                 2597 |
+    +----------------------+
+
+// Which Address Book Entry is listed as being the oldest of age?
+
+    select addressBookId from Entry ORDER BY birthday LIMIT 1;
+    
+    // OUTPUT:
+    +---------------+
+    | addressBookId |
+    +---------------+
+    |            93 |
+    +---------------+
+    1 row in set (0.00 sec)
+    
+    
+    // select min(birthday) from Entry;
