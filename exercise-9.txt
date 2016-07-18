@@ -1,0 +1,40 @@
+// Exercise 9
+
+// How many Accounts exist?
+
+    select count(*) from Account;
+    
+    // OUTPUT:
+    +----------+
+    | count(*) |
+    +----------+
+    |     1000 |
+    +----------+
+    1 row in set (0.00 sec)
+
+// How many Address Books exist?
+
+    select count(*) from AddressBook;
+    
+    // OUTPUT:
+    +----------+
+    | count(*) |
+    +----------+
+    |     2201 |
+    +----------+
+    1 row in set (0.00 sec)
+
+// How many Address Book Entries exist?
+
+    select count(addressBookId) from Entry;
+    
+    //OUTPUT:
+    +----------------------+
+    | count(addressBookId) |
+    +----------------------+
+    |                 4000 |
+    +----------------------+
+    1 row in set (0.00 sec)
+    
+    
+    
