@@ -58,14 +58,13 @@
 
 // How many Address Book Entries are work phones starting with a country code?
 
-    SELECT count(*) FROM Entry WHERE contentLineOne like ("1-%");
+    select count(*) from Entry where type like ("work") and subtype like ("phone") and contentLineOne like ("1-%");
     
-    // OUTPUT: 
-    
+    // OUTPUT:
     +----------+
     | count(*) |
     +----------+
-    |      200 |
+    |       60 |
     +----------+
 
 
