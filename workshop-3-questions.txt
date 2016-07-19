@@ -1,0 +1,71 @@
+// Exercise 1
+
+// Which Account owns the most Address Books?
+
+    select count(*), accountId from AddressBook group by accountId order by count(*) desc limit 2;
+    
+    // OUTPUT:
+    
+    +----------+-----------+
+    | count(*) | accountId |
+    +----------+-----------+
+    |       38 |         5 |
+    |       38 |        14 |
+    +----------+-----------+
+
+// Which Address Book contains the most Entries?
+
+    select count(*), addressBookId from Entry group by addressBookId order by count(*) desc limit 1;
+    
+    // OUTPUT:
+    
+    +----------+---------------+
+    | count(*) | addressBookId |
+    +----------+---------------+
+    |       52 |            37 |
+    +----------+---------------+
+    
+    
+// Exercise 2
+
+// How many Address Book Entries have phones starting with area code 3XX?
+
+    SELECT count(*) FROM Entry WHERE contentLineOne like ("1-3%") or contentLineOne like ("(3%");
+    
+    // OUTPUT:
+    
+    +----------+
+    | count(*) |
+    +----------+
+    |       60 |
+    +----------+
+
+
+// How many Address Book Entries have home phones not containing the digit 5?
+
+    select count(*) from Entry where type like("home") and subtype like("phone") and contentLineOne not like ("%5%");
+    
+    // OUTPUT:
+    
+    +----------+
+    | count(*) |
+    +----------+
+    |       76 |
+    +----------+
+
+    // select count(*) from Entry where type like("home") and subtype like("phone") and contentLineOne not like ("%5%");
+
+
+// How many Address Book Entries are work phones starting with a country code?
+
+    SELECT count(*) FROM Entry WHERE contentLineOne like ("1-%");
+    
+    // OUTPUT: 
+    
+    +----------+
+    | count(*) |
+    +----------+
+    |      200 |
+    +----------+
+
+
